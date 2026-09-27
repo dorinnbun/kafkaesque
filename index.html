@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Dossier of K.</title>
+<meta name="description" content="A non-linear, self-narrated journey through Kafka's world, told from his point of view.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Tenor+Sans&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="stage" aria-label="The world of K." role="img"></canvas>
+
+<!-- In-scene HUD -->
+<div id="hud" hidden>
+  <div id="caseLabel" class="case-label"></div>
+  <div id="counter" class="counter" hidden></div>
+</div>
+
+<div id="prompt" class="prompt" hidden><span class="prompt-key">E</span><span id="promptText"></span><i id="promptRing"></i></div>
+
+<div id="narration" class="narration" aria-live="polite">
+  <p id="narrLine"></p>
+  <p id="narrHint" class="hint"></p>
+</div>
+
+<div id="emberWord" class="ember-word" aria-live="polite"></div>
+
+<div id="choice" class="choice" hidden>
+  <p id="choicePrompt" class="choice-prompt"></p>
+  <div id="choiceOptions" class="choice-options"></div>
+</div>
+
+<!-- Title -->
+<section id="title" class="screen title-screen">
+  <div class="title-inner">
+    <p class="eyebrow">A dossier in six fragments, filed out of order</p>
+    <h1 class="mark">K.</h1>
+    <p class="lede">Prague, 1883 to 1924. A clerk at the Workers' Accident Insurance Institute writes at night. What he writes follows him through doors that close.</p>
+    <div class="title-actions">
+      <button id="btnBegin" class="btn btn-primary" type="button">Enter the process</button>
+      <button id="btnContinue" class="btn" type="button" hidden>Resume the file</button>
+    </div>
+    <p class="fineprint">Headphones recommended. ← → or A D to walk · E or Space to act · Enter to hurry the narrator · M to mute</p>
+  </div>
+</section>
+
+<!-- Archive / hub -->
+<section id="archive" class="screen archive-screen" hidden>
+  <header class="archive-head">
+    <p class="eyebrow">Kanzlei · Registry of Proceedings</p>
+    <h2 class="archive-title">The Archive</h2>
+    <p id="archiveNote" class="archive-note">The files are handed out in no particular order. That is the order. A file, once opened, must be seen through.</p>
+  </header>
+  <ol id="files" class="files"></ol>
+  <footer class="archive-foot">
+    <p class="embers-label">Recovered from the dark</p>
+    <p id="emberStrip" class="ember-strip"></p>
+    <button id="btnDoor" class="btn btn-primary" type="button" hidden>Return to the door</button>
+  </footer>
+</section>
+
+<!-- Interrogation (black & white, always chronological) -->
+<section id="interrogation" class="screen interrogation-screen" hidden>
+  <div class="lamp" aria-hidden="true"></div>
+  <div class="interro-inner">
+    <p id="interroNo" class="eyebrow"></p>
+    <div id="interroText" class="interro-text"></div>
+    <p class="interro-skip">Enter to continue</p>
+  </div>
+</section>
+
+<!-- Finale overlay -->
+<section id="finale" class="screen finale-screen" hidden>
+  <div class="finale-inner">
+    <p id="endingName" class="eyebrow"></p>
+    <p id="hopeLine" class="hope-line"></p>
+    <p id="hopeCoda" class="hope-coda"></p>
+    <div id="credits" class="credits" hidden>
+      <p>Franz Kafka (1883–1924) asked his friend Max Brod to burn every manuscript he left behind. Brod refused.</p>
+      <p>That is the only reason any of this could be read.</p>
+      <p class="sources">Fragments after <em>Before the Law</em>, <em>The Metamorphosis</em>, <em>The Trial</em>, <em>The Castle</em> (Kafka); <em>Notes from Underground</em>, <em>Crime and Punishment</em> (Dostoevsky); <em>Nineteen Eighty-Four</em> (Orwell). All narration is original writing in their spirit.</p>
+      <button id="btnAgain" class="btn" type="button">Open a new file</button>
+    </div>
+  </div>
+</section>
+
+<div id="touch" class="touch" hidden>
+  <button id="tLeft" class="tbtn" type="button" aria-label="Walk left">◀</button>
+  <button id="tAct" class="tbtn tact" type="button" aria-label="Act">act</button>
+  <button id="tRight" class="tbtn" type="button" aria-label="Walk right">▶</button>
+</div>
+
+<button id="mute" class="mute" type="button" aria-pressed="false">sound on</button>
+<div id="fade" class="fade"></div>
+
+<script src="js/audio.js"></script>
+<script src="js/render.js"></script>
+<script src="js/story.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
