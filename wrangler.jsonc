@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "kafkaesque",
+  "compatibility_date": "2026-09-27",
+  // Static site only: no Worker code, just the files in ./public.
+  "assets": {
+    "directory": "./public"
+  }
+}

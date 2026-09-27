@@ -71,7 +71,7 @@ Archive → "Put the files in order" (reassembly) → Epilogue (the Door) → En
 
 ## Tech
 
-- Plain HTML, CSS and JS with no build step. Open `index.html` directly or serve the folder.
+- Plain HTML, CSS and JS with no build step, all in `public/`. Open `public/index.html` directly or serve the folder.
 - `js/audio.js`: the Web Audio score, fully synthesised with no audio files.
 - `js/render.js`: the Canvas 2D toolkit (virtual space 1000 units tall, parallax, fog, light shafts, figures, particles, grain, and the closing frame).
 - `js/story.js`: all text. `js/scenes.js`: the seven places. `js/game.js`: the state machine, input, narration, archive and ending.

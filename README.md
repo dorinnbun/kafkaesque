@@ -2,7 +2,9 @@
 
 A self-narrated, non-linear journey through Franz Kafka's world, seen from his point of view. It also passes through Dostoevsky's underground and Orwell's ministry. You walk, the world closes in, and somewhere in each place a small light waits.
 
-**Play:** open `index.html` in a browser. There is no build step. Headphones are recommended.
+**Play:** open `public/index.html` in a browser. There is no build step. Headphones are recommended.
+
+**Deploy:** the site is served from `public/` by Cloudflare Workers static assets (free plan). Config is in `wrangler.jsonc`; run `npx wrangler deploy`, or connect the repo in the Cloudflare dashboard so every push deploys.
 
 **Controls:** ← → or A D to walk · E / Space to act · Enter to hurry the narrator · 1 2 3 to choose · M to mute. On touch screens, use the on-screen buttons.
 
